@@ -1,0 +1,11 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.app.library.common.view.AutoImageIndicatorView
+        android:id="@+id/auto_scroll_indicate_view"
+        android:layout_width="match_parent"
+        android:layout_height="160dp" />
+
+</RelativeLayout>
