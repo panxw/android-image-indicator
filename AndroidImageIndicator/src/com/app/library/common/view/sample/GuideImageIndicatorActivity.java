@@ -6,22 +6,22 @@ import android.os.Bundle;
 import com.app.library.common.view.ImageIndicatorView;
 import com.app.library.common.view.R;
 
-public class ScrollIndicateActivity extends Activity {
-	private ImageIndicatorView scrollIndicateView;
+public class GuideImageIndicatorActivity extends Activity {
+	private ImageIndicatorView imageIndicatorView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_indicator);
+		setContentView(R.layout.activity_indicator_guide);
 
-		this.scrollIndicateView = (ImageIndicatorView) findViewById(R.id.scroll_indicate_view);
-		this.scrollIndicateView.setOnItemChangeListener(new ImageIndicatorView.OnItemChangeListener() {
+		this.imageIndicatorView = (ImageIndicatorView) findViewById(R.id.guide_indicate_view);
+		this.imageIndicatorView.setOnItemChangeListener(new ImageIndicatorView.OnItemChangeListener() {
 			@Override
 			public void onPosition(int position, int totalCount) {
 
 			}
 		});
-		this.scrollIndicateView.setOnItemChangeListener(new ImageIndicatorView.OnItemChangeListener() {
+		this.imageIndicatorView.setOnItemChangeListener(new ImageIndicatorView.OnItemChangeListener() {
 			@Override
 			public void onPosition(int position, int totalCount) {
 
@@ -33,8 +33,8 @@ public class ScrollIndicateActivity extends Activity {
 
 	private void initView() {
 		final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
-		this.scrollIndicateView.setupLayoutByDrawable(resArray);
-		this.scrollIndicateView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
-		this.scrollIndicateView.show();
+		this.imageIndicatorView.setupLayoutByDrawable(resArray);
+		this.imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
+		this.imageIndicatorView.show();
 	}
 }

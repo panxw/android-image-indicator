@@ -24,11 +24,11 @@ public class SampleActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		final int resId = v.getId();
 		if (resId == R.id.button1) {
-			startActivity(new Intent(this, ScrollIndicateActivity.class));
+			startActivity(new Intent(this, ImageIndicatorActivity.class));
 		} else if (resId == R.id.button2) {
-			startActivity(new Intent(this, AutoScrollIndicateActivity.class));
+			startActivity(new Intent(this, AutoImageIndicatorActivity.class));
 		} else if (resId == R.id.button3) {
-
+			startActivity(new Intent(this, GuideImageIndicatorActivity.class));
 		}
 	}
 }
