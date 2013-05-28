@@ -3,7 +3,9 @@ android-image-indicator
 
 An android image indicator for user guide or auto broadcast effect.
 
-Style 1:
+Style 1(common usage):
+----------------------
+
 place in your layout:
 
     <com.app.library.common.view.ImageIndicatorView
@@ -18,7 +20,9 @@ set ImageIndicatorView as:
       imageIndicatorView.setupLayoutByDrawable(resArray);
       imageIndicatorView.show();
 
-Style2:
+Style2(auto broadcast mode):
+----------------------
+
 place in your layout:
 
     <com.app.library.common.view.AutoImageIndicatorView
@@ -36,7 +40,9 @@ set AutoImageIndicatorView as:
     autoImageIndicatorView.setupLayoutByDrawable(resArray);//图片
     autoImageIndicatorView.show();
 
-Style3:
+Style3(user guide mode):
+----------------------
+
 place in your layout:
 
     <com.app.library.common.view.ImageIndicatorView
