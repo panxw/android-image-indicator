@@ -66,7 +66,7 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 	/**
 	 * 自动播放次数记数
 	 */
-	private int timeCount = 0;
+	private int timesCount = 0;
 
 	public AutoImageIndicatorView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -126,7 +126,7 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 					if (System.currentTimeMillis() - getRefreshTime() < 5 * 1000) {// 最近一次划动间隔小于5s
 						return;
 					}
-					if ((broadcastTimes != DEFAULT_TIMES) && (timeCount > broadcastTimes)) {// 循环次数用完
+					if ((broadcastTimes != DEFAULT_TIMES) && (timesCount > broadcastTimes)) {// 循环次数用完
 						return;
 					}
 					broadcastHandler.sendEmptyMessage(0);
@@ -143,7 +143,7 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 			if (direction == RIGHT) {// roll right
 				if (getCurrentIndex() < getTotalCount()) {
 					if (getCurrentIndex() == getTotalCount() - 1) {
-						timeCount++;// 循环次数次数加1
+						timesCount++;// 循环次数次数加1
 						direction = LEFT;
 					} else {
 						getViewPager().setCurrentItem(getCurrentIndex() + 1, true);
