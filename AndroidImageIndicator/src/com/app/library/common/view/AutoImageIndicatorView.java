@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import android.content.Context;
 import android.os.Handler;
+import android.os.Message;
 import android.util.AttributeSet;
 
 /**
@@ -68,6 +69,11 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 	 */
 	private int timesCount = 0;
 
+	/**
+	 * 循环播放
+	 */
+	private Handler broadcastHandler = null;
+
 	public AutoImageIndicatorView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.init();
@@ -79,6 +85,7 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 	}
 
 	private void init() {
+		this.broadcastHandler = new BroadcastHandler(AutoImageIndicatorView.this);
 		this.scheduler = Executors.newScheduledThreadPool(1);
 	}
 
@@ -135,30 +142,40 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 		}, this.startMils, this.intevalMils, TimeUnit.MILLISECONDS);
 	}
 
-	/**
-	 * 循环播放
-	 */
-	private Handler broadcastHandler = new Handler() {
-		public void handleMessage(android.os.Message msg) {
-			if (direction == RIGHT) {// roll right
-				if (getCurrentIndex() < getTotalCount()) {
-					if (getCurrentIndex() == getTotalCount() - 1) {
-						timesCount++;// 循环次数次数加1
-						direction = LEFT;
-					} else {
-						getViewPager().setCurrentItem(getCurrentIndex() + 1, true);
-					}
+	protected void handleMessage(android.os.Message msg) {
+		if (direction == RIGHT) {// roll right
+			if (getCurrentIndex() < getTotalCount()) {
+				if (getCurrentIndex() == getTotalCount() - 1) {
+					timesCount++;// 循环次数次数加1
+					direction = LEFT;
+				} else {
+					getViewPager().setCurrentItem(getCurrentIndex() + 1, true);
 				}
-			} else {// roll left
-				if (getCurrentIndex() >= 0) {
-					if (getCurrentIndex() == 0) {
-						direction = RIGHT;
-					} else {
-						getViewPager().setCurrentItem(getCurrentIndex() - 1, true);
-					}
+			}
+		} else {// roll left
+			if (getCurrentIndex() >= 0) {
+				if (getCurrentIndex() == 0) {
+					direction = RIGHT;
+				} else {
+					getViewPager().setCurrentItem(getCurrentIndex() - 1, true);
 				}
 			}
 		}
-	};
+	}
+}
 
+class BroadcastHandler extends Handler {
+	private AutoImageIndicatorView autoImageIndicatorView;
+
+	public BroadcastHandler(AutoImageIndicatorView autoImageIndicatorView) {
+		this.autoImageIndicatorView = autoImageIndicatorView;
+	}
+
+	@Override
+	public void handleMessage(Message msg) {
+		super.handleMessage(msg);
+		if (this.autoImageIndicatorView != null) {
+			autoImageIndicatorView.handleMessage(msg);
+		}
+	}
 }
