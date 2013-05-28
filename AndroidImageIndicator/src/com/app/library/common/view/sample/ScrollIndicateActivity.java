@@ -1,10 +1,10 @@
 package com.app.library.common.view.sample;
 
-import com.app.library.common.view.ImageIndicatorView;
-import com.example.androidimageindicator.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.app.library.common.view.ImageIndicatorView;
+import com.app.library.common.view.R;
 
 public class ScrollIndicateActivity extends Activity {
 	private ImageIndicatorView scrollIndicateView;

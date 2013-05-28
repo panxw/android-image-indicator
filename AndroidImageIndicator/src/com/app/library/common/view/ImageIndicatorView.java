@@ -21,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.app.library.http.WebImageView;
-import com.example.androidimageindicator.R;
 
 /**
  * 用户指引,宣传画控件(类似于Gallery效果)

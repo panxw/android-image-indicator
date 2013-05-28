@@ -1,11 +1,11 @@
 package com.app.library.common.view.sample;
 
-import com.app.library.common.view.AutoImageIndicatorView;
-import com.app.library.common.view.ImageIndicatorView;
-import com.example.androidimageindicator.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.app.library.common.view.AutoImageIndicatorView;
+import com.app.library.common.view.ImageIndicatorView;
+import com.app.library.common.view.R;
 
 public class AutoScrollIndicateActivity extends Activity {
 	private AutoImageIndicatorView scrollIndicateView;

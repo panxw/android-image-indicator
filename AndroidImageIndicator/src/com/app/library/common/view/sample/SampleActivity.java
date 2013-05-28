@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.example.androidimageindicator.R;
+import com.app.library.common.view.R;
 
 public class SampleActivity extends Activity implements OnClickListener {
 
