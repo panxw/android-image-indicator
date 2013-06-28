@@ -66,10 +66,10 @@ screemshot:
 
 common style:
 
-![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/poster0.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/poster0.jpg)
 
 userguide style:
 
-![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_00.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_00.jpg)
 
-![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_01.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_01.jpg)
