@@ -6,6 +6,6 @@
     <com.app.library.common.view.AutoImageIndicatorView
         android:id="@+id/auto_indicate_view"
         android:layout_width="match_parent"
-        android:layout_height="160dp" />
+        android:layout_height="120dp" />
 
 </RelativeLayout>

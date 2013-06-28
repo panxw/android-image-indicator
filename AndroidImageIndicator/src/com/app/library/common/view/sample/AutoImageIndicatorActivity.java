@@ -33,7 +33,7 @@ public class AutoImageIndicatorActivity extends Activity {
 	}
 
 	private void initView() {
-		final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
+		final Integer[] resArray = new Integer[] { R.drawable.poster1, R.drawable.poster2, R.drawable.poster3 };
 		this.autoImageIndicatorView.setBroadcastEnable(true);
 		this.autoImageIndicatorView.setBroadCastTimes(5);//循环播放5次
 		this.autoImageIndicatorView.setBroadcastTimeIntevel(2 * 1000, 3 * 1000);//播放启动时间及间隔

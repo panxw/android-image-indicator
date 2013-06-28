@@ -32,7 +32,7 @@ public class ImageIndicatorActivity extends Activity {
 	}
 
 	private void initView() {
-		final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
+		final Integer[] resArray = new Integer[] { R.drawable.poster1, R.drawable.poster2, R.drawable.poster3 };
 		this.imageIndicatorView.setupLayoutByDrawable(resArray);
 		this.imageIndicatorView.show();
 	}

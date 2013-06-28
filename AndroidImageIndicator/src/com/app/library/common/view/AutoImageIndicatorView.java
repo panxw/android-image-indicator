@@ -27,11 +27,11 @@ public class AutoImageIndicatorView extends ImageIndicatorView {
 	/**
 	 * 自动播放启动默认时间
 	 */
-	private static final long DEFAULT_STARTMILS = 3 * 1000;
+	private static final long DEFAULT_STARTMILS = 2 * 1000;
 	/**
 	 * 自动播放间隔默认时间
 	 */
-	private static final long DEFAULT_INTEVALMILS = 5 * 1000;
+	private static final long DEFAULT_INTEVALMILS = 3 * 1000;
 	/**
 	 * 启动时间ms
 	 */
