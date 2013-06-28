@@ -36,7 +36,7 @@ public class GuideImageIndicatorActivity extends Activity {
 	}
 
 	private void initView() {
-		final Integer[] resArray = new Integer[] { R.drawable.guide_01, R.drawable.guide_02, R.drawable.guide_03 };
+		final Integer[] resArray = new Integer[] { R.drawable.guide_00, R.drawable.guide_01};
 		this.imageIndicatorView.setupLayoutByDrawable(resArray);
 		this.imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
 		this.imageIndicatorView.show();
