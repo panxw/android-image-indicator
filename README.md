@@ -65,10 +65,10 @@ screemshot:
 
 common style:
 
-![ScreenShot](https://raw.github.com/allthelucky/android-viewpager-indicator/master/AndroidViewpagerIndicator/screenshot/poster0.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/poster0.png)
 
 userguide style:
 
-![ScreenShot](https://raw.github.com/allthelucky/android-viewpager-indicator/master/AndroidViewpagerIndicator/screenshot/guider00.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider00.png)
 
-![ScreenShot](https://raw.github.com/allthelucky/android-viewpager-indicator/master/AndroidViewpagerIndicator/screenshot/guider01.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider01.png)
