@@ -62,6 +62,7 @@ screemshot:
 
 
 3.screenshot:
+----------------------
 
 common style:
 
@@ -69,6 +70,6 @@ common style:
 
 userguide style:
 
-![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider00.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_00.png)
 
-![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider01.png)
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_01.png)
