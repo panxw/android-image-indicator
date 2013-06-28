@@ -57,3 +57,18 @@ set ImageIndicatorView as:
     imageIndicatorView.setupLayoutByDrawable(resArray);
     imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
     imageIndicatorView.show();
+
+screemshot:
+
+
+3.screenshot:
+
+common style:
+
+![ScreenShot](https://raw.github.com/allthelucky/android-viewpager-indicator/master/AndroidViewpagerIndicator/screenshot/poster0.png)
+
+userguide style:
+
+![ScreenShot](https://raw.github.com/allthelucky/android-viewpager-indicator/master/AndroidViewpagerIndicator/screenshot/guider00.png)
+
+![ScreenShot](https://raw.github.com/allthelucky/android-viewpager-indicator/master/AndroidViewpagerIndicator/screenshot/guider01.png)
