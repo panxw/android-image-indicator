@@ -20,7 +20,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.app.library.http.WebImageView;
+import com.app.library.http.UrlImageView;
 
 /**
  * 用户指引,宣传画控件(类似于Gallery效果)
@@ -244,7 +244,7 @@ public class ImageIndicatorView extends RelativeLayout {
 		final int len = urlList.size();
 		if (len > 0) {
 			for (int index = 0; index < len; index++) {
-				final WebImageView pageItem = new WebImageView(getContext());
+				final UrlImageView pageItem = new UrlImageView(getContext());
 				pageItem.setScaleType(ScaleType.FIT_XY);
 				pageItem.setURLAsync(urlList.get(index));
 				addViewItem(pageItem);
