@@ -58,10 +58,8 @@ set ImageIndicatorView as:
     imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
     imageIndicatorView.show();
 
-screemshot:
 
-
-3.screenshot:
+Screenshot:
 ----------------------
 
 common style:
