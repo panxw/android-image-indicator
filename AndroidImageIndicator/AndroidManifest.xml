@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.app.library.common.view.sample.SampleActivity"
+            android:name="com.allthelucky.common.view.sample.SampleActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sample.AutoImageIndicatorActivity" />
-        <activity android:name=".sample.GuideImageIndicatorActivity" />
-        <activity android:name=".sample.ImageIndicatorActivity" />
+        <activity android:name="com.allthelucky.common.view.sample.AutoImageIndicatorActivity" />
+        <activity android:name="com.allthelucky.common.view.sample.GuideImageIndicatorActivity" />
+        <activity android:name="com.allthelucky.common.view.sample.ImageIndicatorActivity" />
     </application>
 
 </manifest>

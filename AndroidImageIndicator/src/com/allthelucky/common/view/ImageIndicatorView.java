@@ -1,10 +1,13 @@
-package com.app.library.common.view;
+package com.allthelucky.common.view;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
@@ -20,7 +23,9 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.app.library.http.UrlImageView;
+import com.allthelucky.http.RequestListener;
+import com.allthelucky.http.RequestManager;
+import com.app.library.common.view.R;
 
 /**
  * 用户指引,宣传画控件(类似于Gallery效果)
@@ -244,12 +249,60 @@ public class ImageIndicatorView extends RelativeLayout {
 		final int len = urlList.size();
 		if (len > 0) {
 			for (int index = 0; index < len; index++) {
-				final UrlImageView pageItem = new UrlImageView(getContext());
+				final ImageView pageItem = new ImageView(getContext());
 				pageItem.setScaleType(ScaleType.FIT_XY);
-				pageItem.setURLAsync(urlList.get(index));
+				loadImage(pageItem, urlList.get(index), R.drawable.ic_launcher);
 				addViewItem(pageItem);
 			}
 		}
+	}
+
+	private void loadImage(final ImageView pageItem, final String imageUrl,final int imageResId ) {
+		/**
+		 * load callback for RequestManager
+		 */
+		final RequestListener requestListener = new RequestListener() {
+
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onCompleted(int statusCode, byte[] data, long lastModified, String description, int actionId) {
+				if (RequestListener.ERR == statusCode) {
+						pageItem.setImageResource(imageResId);
+				} else {
+					if (null != data) {
+						BitmapFactory.Options o = new BitmapFactory.Options();// decode image size
+						o.inJustDecodeBounds = true;
+						BitmapFactory.decodeByteArray(data, 0, data.length, o);
+					
+						final int REQUIRED_SIZE = 100;	// Find the correct scale value.
+						int width_tmp = o.outWidth, height_tmp = o.outHeight;
+						int scale = 1;
+						while (true) {
+							if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE)
+								break;
+							width_tmp /= 2;
+							height_tmp /= 2;
+							scale *= 2;
+						}
+						
+						BitmapFactory.Options options = new Options();// decode with scale
+						options.inSampleSize = scale;
+						Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
+						if (bitmap != null) {
+							pageItem.setImageBitmap(bitmap);
+						} else {
+							pageItem.setImageResource(imageResId);
+						}
+					}
+				}
+			}
+		};
+		
+		RequestManager.getInstance().get(getContext(), imageUrl, null, requestListener, true, 0);
 	}
 
 	/**

@@ -1,4 +1,4 @@
-package com.app.library.common.view;
+package com.allthelucky.common.view;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

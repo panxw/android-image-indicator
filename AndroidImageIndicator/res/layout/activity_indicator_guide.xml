@@ -3,11 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.app.library.common.view.ImageIndicatorView
+    <com.allthelucky.common.view.ImageIndicatorView
         android:id="@+id/guide_indicate_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </com.app.library.common.view.ImageIndicatorView>
+        android:layout_height="match_parent" />
 
     <Button
         android:id="@+id/button1"

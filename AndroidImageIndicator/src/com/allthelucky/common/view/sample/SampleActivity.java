@@ -1,4 +1,4 @@
-package com.app.library.common.view.sample;
+package com.allthelucky.common.view.sample;
 
 import android.app.Activity;
 import android.content.Intent;

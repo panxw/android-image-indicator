@@ -1,10 +1,10 @@
-package com.app.library.common.view.sample;
+package com.allthelucky.common.view.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.app.library.common.view.AutoImageIndicatorView;
-import com.app.library.common.view.ImageIndicatorView;
+import com.allthelucky.common.view.AutoImageIndicatorView;
+import com.allthelucky.common.view.ImageIndicatorView;
 import com.app.library.common.view.R;
 
 public class AutoImageIndicatorActivity extends Activity {
