@@ -8,7 +8,7 @@ Style 1(common usage):
 
 place in your layout:
 
-    <com.app.library.common.view.ImageIndicatorView
+    <com.allthelucky.common.view.ImageIndicatorView
         android:id="@+id/indicate_view"
         android:layout_width="match_parent"
         android:layout_height="160dp" />
@@ -25,7 +25,7 @@ Style2(auto broadcast mode):
 
 place in your layout:
 
-    <com.app.library.common.view.AutoImageIndicatorView
+    <com.allthelucky.common.view.AutoImageIndicatorView
         android:id="@+id/auto_indicate_view"
         android:layout_width="match_parent"
         android:layout_height="160dp" />
@@ -45,7 +45,7 @@ Style3(user guide mode):
 
 place in your layout:
 
-    <com.app.library.common.view.ImageIndicatorView
+    <com.allthelucky.common.view.ImageIndicatorView
         android:id="@+id/guide_indicate_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
