@@ -3,10 +3,10 @@ android-image-indicator
 
 An android image indicator for user guide or auto broadcast effect.
 
-Style 1(common usage):
+Style 1:
 ----------------------
 
-place in your layout:
+common mode:
 
     <com.allthelucky.common.view.ImageIndicatorView
         android:id="@+id/indicate_view"
@@ -20,10 +20,8 @@ set ImageIndicatorView as:
       imageIndicatorView.setupLayoutByDrawable(resArray);
       imageIndicatorView.show();
 
-Style2(auto broadcast mode):
-----------------------
 
-place in your layout:
+broadcast mode:
 
     <com.allthelucky.common.view.AutoImageIndicatorView
         android:id="@+id/auto_indicate_view"
@@ -40,10 +38,10 @@ set AutoImageIndicatorView as:
     autoImageIndicatorView.setupLayoutByDrawable(resArray);//图片
     autoImageIndicatorView.show();
 
-Style3(user guide mode):
-----------------------
+![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/poster0.jpg)
 
-place in your layout:
+Style2(user guide mode):
+----------------------
 
     <com.allthelucky.common.view.ImageIndicatorView
         android:id="@+id/guide_indicate_view"
@@ -58,16 +56,7 @@ set ImageIndicatorView as:
     imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
     imageIndicatorView.show();
 
-
-Screenshot:
-----------------------
-
-common style:
-
-![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/poster0.jpg)
-
-userguide style:
-
 ![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_00.jpg)
 
 ![ScreenShot](https://raw.github.com/allthelucky/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_01.jpg)
+
