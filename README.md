@@ -4,7 +4,6 @@ android-image-indicator
 Android image indicator for user guide or auto broadcast effect.
 
 ####1、普通模式
-----------------------
 layout布局:
 
 	<com.allthelucky.common.view.ImageIndicatorView
