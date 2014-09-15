@@ -5,7 +5,7 @@ Android image indicator for user guide or auto broadcast effect.
 
 Style 1:
 ----------------------
-layout
+layout:
 
 	<com.allthelucky.common.view.ImageIndicatorView
 	android:id="@+id/indicate_view"
@@ -13,9 +13,11 @@ layout
 	android:layout_height="160dp" />
         
 set ImageIndicatorView as:
+
 	imageIndicatorView = (ImageIndicatorView) findViewById(R.id.auto_indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
 	imageIndicatorView.setupLayoutByDrawable(resArray);//图片
+	imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_ARROW_ROUND_STYLE);
 	imageIndicatorView.show();
 
 	AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.imageIndicatorView);
