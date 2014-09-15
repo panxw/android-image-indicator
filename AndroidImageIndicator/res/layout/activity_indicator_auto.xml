@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.allthelucky.common.view.AutoImageIndicatorView
+    <com.allthelucky.common.view.ImageIndicatorView
         android:id="@+id/auto_indicate_view"
         android:layout_width="match_parent"
         android:layout_height="120dp" />
