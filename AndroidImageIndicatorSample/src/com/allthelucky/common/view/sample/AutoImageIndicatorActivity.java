@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.allthelucky.common.view.AutoPlayManager;
 import com.allthelucky.common.view.ImageIndicatorView;
-import com.app.library.common.view.R;
 
 public class AutoImageIndicatorActivity extends Activity {
 	private ImageIndicatorView autoImageIndicatorView;
@@ -41,7 +40,7 @@ public class AutoImageIndicatorActivity extends Activity {
 		AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.autoImageIndicatorView);
 		autoBrocastManager.setBroadcastEnable(true);
 		autoBrocastManager.setBroadCastTimes(5);//循环播放5次
-		autoBrocastManager.setBroadcastTimeIntevel(5 * 1000, 3 * 1000);//播放启动时间及间隔
+		autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//播放启动时间及间隔
 		autoBrocastManager.loop();
 		
 	}

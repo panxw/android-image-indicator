@@ -81,7 +81,7 @@ public class AutoPlayManager {
 	 * 设置自动播放启动时间和间隔
 	 * 
 	 * @param startMils
-	 *            启动时间ms(>5, 默认为8s)
+	 *            启动时间ms(>2, 默认为8s)
 	 * @param intevelMils
 	 *            间隔ms(默认为3s)
 	 */
@@ -122,7 +122,7 @@ public class AutoPlayManager {
 	protected void handleMessage(android.os.Message msg) {
 		if (broadcastEnable) {
 			if (System.currentTimeMillis()
-					- mImageIndicatorView.getRefreshTime() < 5 * 1000) {// 最近一次划动间隔小于2s
+					- mImageIndicatorView.getRefreshTime() < 2 * 1000) {// 最近一次划动间隔小于2s
 				return;
 			}
 			if ((broadcastTimes != DEFAULT_TIMES)
