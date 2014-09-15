@@ -11,7 +11,7 @@ import com.allthelucky.common.view.ImageIndicatorView;
  * @author steven-pan
  * 
  */
-public class AutoBrocastManager {
+public class AutoPlayManager {
 
 	/**
 	 * 自动播放标志位，默认播放
@@ -72,16 +72,16 @@ public class AutoBrocastManager {
 	 */
 	private ImageIndicatorView mImageIndicatorView = null;
 
-	public AutoBrocastManager(ImageIndicatorView imageIndicatorView) {
+	public AutoPlayManager(ImageIndicatorView imageIndicatorView) {
 		this.mImageIndicatorView = imageIndicatorView;
-		this.broadcastHandler = new BroadcastHandler(AutoBrocastManager.this);
+		this.broadcastHandler = new BroadcastHandler(AutoPlayManager.this);
 	}
 
 	/**
 	 * 设置自动播放启动时间和间隔
 	 * 
 	 * @param startMils
-	 *            启动时间ms(默认为8s)
+	 *            启动时间ms(>5, 默认为8s)
 	 * @param intevelMils
 	 *            间隔ms(默认为3s)
 	 */
@@ -122,7 +122,7 @@ public class AutoBrocastManager {
 	protected void handleMessage(android.os.Message msg) {
 		if (broadcastEnable) {
 			if (System.currentTimeMillis()
-					- mImageIndicatorView.getRefreshTime() < 5 * 1000) {// 最近一次划动间隔小于5s
+					- mImageIndicatorView.getRefreshTime() < 5 * 1000) {// 最近一次划动间隔小于2s
 				return;
 			}
 			if ((broadcastTimes != DEFAULT_TIMES)
@@ -164,9 +164,9 @@ public class AutoBrocastManager {
 	}
 
 	static class BroadcastHandler extends Handler {
-		private AutoBrocastManager autoBrocastManager;
+		private AutoPlayManager autoBrocastManager;
 
-		public BroadcastHandler(AutoBrocastManager autoBrocastManager) {
+		public BroadcastHandler(AutoPlayManager autoBrocastManager) {
 			this.autoBrocastManager = autoBrocastManager;
 		}
 

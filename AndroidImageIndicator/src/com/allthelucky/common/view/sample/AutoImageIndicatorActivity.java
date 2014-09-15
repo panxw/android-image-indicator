@@ -3,7 +3,7 @@ package com.allthelucky.common.view.sample;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.allthelucky.common.view.AutoBrocastManager;
+import com.allthelucky.common.view.AutoPlayManager;
 import com.allthelucky.common.view.ImageIndicatorView;
 import com.app.library.common.view.R;
 
@@ -38,10 +38,10 @@ public class AutoImageIndicatorActivity extends Activity {
 		this.autoImageIndicatorView.setupLayoutByDrawable(resArray);//图片
 		this.autoImageIndicatorView.show();
 		
-		AutoBrocastManager autoBrocastManager =  new AutoBrocastManager(this.autoImageIndicatorView);
+		AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.autoImageIndicatorView);
 		autoBrocastManager.setBroadcastEnable(true);
 		autoBrocastManager.setBroadCastTimes(5);//循环播放5次
-		autoBrocastManager.setBroadcastTimeIntevel(2 * 1000, 3 * 1000);//播放启动时间及间隔
+		autoBrocastManager.setBroadcastTimeIntevel(5 * 1000, 3 * 1000);//播放启动时间及间隔
 		autoBrocastManager.loop();
 		
 	}
