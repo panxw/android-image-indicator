@@ -13,29 +13,16 @@ layout
 	android:layout_height="160dp" />
         
 set ImageIndicatorView as:
+	imageIndicatorView = (ImageIndicatorView) findViewById(R.id.auto_indicate_view);
+	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
+	imageIndicatorView.setupLayoutByDrawable(resArray);//图片
+	imageIndicatorView.show();
 
-	AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.autoImageIndicatorView);
+	AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.imageIndicatorView);
 	autoBrocastManager.setBroadcastEnable(true);
 	autoBrocastManager.setBroadCastTimes(5);//循环次数
 	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//首次启动时间及间隔
 	autoBrocastManager.loop();
-
-broadcast mode:
-
-	<com.allthelucky.common.view.AutoImageIndicatorView
-	android:id="@+id/auto_indicate_view"
-	android:layout_width="match_parent"
-	android:layout_height="160dp" />
-        
-set AutoImageIndicatorView as:
-
-	autoImageIndicatorView = (AutoImageIndicatorView) findViewById(R.id.auto_indicate_view);
-	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
-	autoImageIndicatorView.setBroadcastEnable(true);
-	autoImageIndicatorView.setBroadCastTimes(5);//循环播放5次
-	autoImageIndicatorView.setBroadcastTimeIntevel(2 * 1000, 3 * 1000);//播放启动时间及间隔
-	autoImageIndicatorView.setupLayoutByDrawable(resArray);//图片
-	autoImageIndicatorView.show();
 
 ![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/poster0.jpg)
 
