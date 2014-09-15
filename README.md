@@ -38,7 +38,7 @@ set AutoImageIndicatorView as:
     autoImageIndicatorView.setupLayoutByDrawable(resArray);//图片
     autoImageIndicatorView.show();
 
-![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicator/screenshot/poster0.jpg)
+![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/poster0.jpg)
 
 Style2(user guide mode):
 ----------------------
@@ -56,7 +56,7 @@ set ImageIndicatorView as:
     imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_USERGUIDE_STYLE);
     imageIndicatorView.show();
 
-![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_00.jpg)
+![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/guider_00.jpg)
 
-![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicator/screenshot/guider_01.jpg)
+![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/guider_01.jpg)
 
