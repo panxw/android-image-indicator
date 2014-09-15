@@ -20,7 +20,7 @@ ImageIndicatorView设置:
 	imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_ARROW_ROUND_STYLE);
 	imageIndicatorView.show();
 	
-	//设置自动播放，如有必要
+	//如需要，设置自动播放模式
 	AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.imageIndicatorView);
 	autoBrocastManager.setBroadcastEnable(true);
 	autoBrocastManager.setBroadCastTimes(5);//循环次数
@@ -29,7 +29,7 @@ ImageIndicatorView设置:
 
 ![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/poster0.jpg)
 
-##2、用户指引模式:
+####2、用户指引模式
 
 	this.imageIndicatorView = (ImageIndicatorView) findViewById(R.id.guide_indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
