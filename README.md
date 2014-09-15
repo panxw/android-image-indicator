@@ -3,23 +3,24 @@ android-image-indicator
 
 Android image indicator for user guide or auto broadcast effect.
 
-Style 1:
+####1、普通模式
 ----------------------
-layout:
+layout布局:
 
 	<com.allthelucky.common.view.ImageIndicatorView
 	android:id="@+id/indicate_view"
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />
         
-set ImageIndicatorView as:
+ImageIndicatorView设置:
 
 	imageIndicatorView = (ImageIndicatorView) findViewById(R.id.auto_indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
 	imageIndicatorView.setupLayoutByDrawable(resArray);//图片
 	imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_ARROW_ROUND_STYLE);
 	imageIndicatorView.show();
-
+	
+	//设置自动播放，如有必要
 	AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.imageIndicatorView);
 	autoBrocastManager.setBroadcastEnable(true);
 	autoBrocastManager.setBroadCastTimes(5);//循环次数
@@ -28,14 +29,7 @@ set ImageIndicatorView as:
 
 ![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/poster0.jpg)
 
-Style2(user guide mode):
-
-	<com.allthelucky.common.view.ImageIndicatorView
-	android:id="@+id/guide_indicate_view"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" />
-        
-set ImageIndicatorView as:
+##2、用户指引模式:
 
 	this.imageIndicatorView = (ImageIndicatorView) findViewById(R.id.guide_indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
