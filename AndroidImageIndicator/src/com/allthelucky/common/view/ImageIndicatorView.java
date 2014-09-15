@@ -5,9 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
@@ -19,12 +16,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.allthelucky.http.RequestListener;
-import com.allthelucky.http.RequestManager;
 import com.app.library.common.view.R;
 
 /**
@@ -149,28 +143,28 @@ public class ImageIndicatorView extends RelativeLayout {
 	 * 
 	 * @return
 	 */
-	protected ViewPager getViewPager() {
+	public ViewPager getViewPager() {
 		return viewPager;
 	}
 
 	/**
 	 * 取当前位置Index值
 	 */
-	protected int getCurrentIndex() {
+	public int getCurrentIndex() {
 		return this.currentIndex;
 	}
 
 	/**
 	 * 取总VIEW数目
 	 */
-	protected int getTotalCount() {
+	public int getTotalCount() {
 		return this.totelCount;
 	}
 
 	/**
 	 * 取最近一次刷新时间
 	 */
-	protected long getRefreshTime() {
+	public long getRefreshTime() {
 		return this.refreshTime;
 	}
 
@@ -234,75 +228,6 @@ public class ImageIndicatorView extends RelativeLayout {
 				addViewItem(pageItem);
 			}
 		}
-	}
-
-	/**
-	 * 设置显示图片URL列表
-	 * 
-	 * @param urlList
-	 *            URL列表
-	 */
-	public void setupLayoutByImageUrl(final List<String> urlList) {
-		if (urlList == null)
-			throw new NullPointerException();
-
-		final int len = urlList.size();
-		if (len > 0) {
-			for (int index = 0; index < len; index++) {
-				final ImageView pageItem = new ImageView(getContext());
-				pageItem.setScaleType(ScaleType.FIT_XY);
-				loadImage(pageItem, urlList.get(index), R.drawable.ic_launcher);
-				addViewItem(pageItem);
-			}
-		}
-	}
-
-	private void loadImage(final ImageView pageItem, final String imageUrl,final int imageResId ) {
-		/**
-		 * load callback for RequestManager
-		 */
-		final RequestListener requestListener = new RequestListener() {
-
-			@Override
-			public void onStart() {
-
-			}
-
-			@Override
-			public void onCompleted(int statusCode, byte[] data, long lastModified, String description, int actionId) {
-				if (RequestListener.ERR == statusCode) {
-						pageItem.setImageResource(imageResId);
-				} else {
-					if (null != data) {
-						BitmapFactory.Options o = new BitmapFactory.Options();// decode image size
-						o.inJustDecodeBounds = true;
-						BitmapFactory.decodeByteArray(data, 0, data.length, o);
-					
-						final int REQUIRED_SIZE = 100;	// Find the correct scale value.
-						int width_tmp = o.outWidth, height_tmp = o.outHeight;
-						int scale = 1;
-						while (true) {
-							if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE)
-								break;
-							width_tmp /= 2;
-							height_tmp /= 2;
-							scale *= 2;
-						}
-						
-						BitmapFactory.Options options = new Options();// decode with scale
-						options.inSampleSize = scale;
-						Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length, options);
-						if (bitmap != null) {
-							pageItem.setImageBitmap(bitmap);
-						} else {
-							pageItem.setImageResource(imageResId);
-						}
-					}
-				}
-			}
-		};
-		
-		RequestManager.getInstance().get(getContext(), imageUrl, null, requestListener, true, 0);
 	}
 
 	/**
