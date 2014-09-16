@@ -12,9 +12,9 @@ public class AutoImageIndicatorActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_indicator_auto);
+		setContentView(R.layout.activity_indicator);
 
-		this.autoImageIndicatorView = (ImageIndicatorView) findViewById(R.id.auto_indicate_view);
+		this.autoImageIndicatorView = (ImageIndicatorView) findViewById(R.id.indicate_view);
 		autoImageIndicatorView.setOnItemChangeListener(new ImageIndicatorView.OnItemChangeListener() {
 			@Override
 			public void onPosition(int position, int totalCount) {
