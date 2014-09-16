@@ -17,7 +17,7 @@ public class NetworkImageIndicatorActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_indicator_network);
 
-		this.imageIndicatorView = (NetworkImageIndicatorView) findViewById(R.id.indicate_view);
+		this.imageIndicatorView = (NetworkImageIndicatorView) findViewById(R.id.network_indicate_view);
 		this.imageIndicatorView.setOnItemChangeListener(new ImageIndicatorView.OnItemChangeListener() {
 			@Override
 			public void onPosition(int position, int totalCount) {
@@ -36,8 +36,8 @@ public class NetworkImageIndicatorActivity extends Activity {
 
 	private void initView() {
 		List<String> urlList= new ArrayList<String>();
-		urlList.add("https://camo.githubusercontent.com/89e5d1cbd313c8611aaac6040fc4be873818ac12/68747470733a2f2f7261772e6769746875622e636f6d2f77696e6669726d2f616e64726f69642d696d6167652d696e64696361746f722f6d61737465722f416e64726f6964496d616765496e64696361746f722f73637265656e73686f742f6775696465725f30302e6a7067");
-		urlList.add("https://camo.githubusercontent.com/929483245f2f66ad7a6fd3bb7396049780446199/68747470733a2f2f7261772e6769746875622e636f6d2f77696e6669726d2f616e64726f69642d696d6167652d696e64696361746f722f6d61737465722f416e64726f6964496d616765496e64696361746f722f73637265656e73686f742f6775696465725f30312e6a7067");
+		urlList.add("https://github.com/winfirm/android-image-indicator/blob/master/AndroidImageIndicatorSample/screenshot/guider_00.jpg");
+		urlList.add("https://github.com/winfirm/android-image-indicator/blob/master/AndroidImageIndicatorSample/screenshot/guider_01.jpg");
 		
 		this.imageIndicatorView.setupLayoutByImageUrl(urlList);
 		this.imageIndicatorView.show();

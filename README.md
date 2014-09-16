@@ -3,7 +3,7 @@ android-image-indicator
 
 Android image indicator for user guide or auto broadcast effect.
 
-####1、普通模式
+####1、广告模式
 layout布局:
 
 	<com.allthelucky.common.view.ImageIndicatorView
@@ -11,16 +11,17 @@ layout布局:
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />
         
-ImageIndicatorView设置:
+ImageIndicatorView设置：
 
-	imageIndicatorView = (ImageIndicatorView) findViewById(R.id.auto_indicate_view);
+	imageIndicatorView = (ImageIndicatorView) findViewById(R.id.indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
 	imageIndicatorView.setupLayoutByDrawable(resArray);//图片
 	imageIndicatorView.setIndicateStyle(ImageIndicatorView.INDICATE_ARROW_ROUND_STYLE);
 	imageIndicatorView.show();
-	
-	//如需要，设置自动播放模式
-	AutoPlayManager autoBrocastManager =  new AutoPlayManager(this.imageIndicatorView);
+
+如需要，设置自动播放模式：
+
+	AutoPlayManager autoBrocastManager =  new AutoPlayManager(imageIndicatorView);
 	autoBrocastManager.setBroadcastEnable(true);
 	autoBrocastManager.setBroadCastTimes(5);//循环次数
 	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//首次启动时间及间隔
@@ -39,3 +40,31 @@ ImageIndicatorView设置:
 ![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/guider_00.jpg)  
 ![ScreenShot](https://raw.github.com/winfirm/android-image-indicator/master/AndroidImageIndicatorSample/screenshot/guider_01.jpg)
 
+####3、使用网络图片
+
+layout布局:
+
+	<com.allthelucky.common.view.network.NetworkImageIndicatorView
+	android:id="@+id/network_indicate_view"
+	android:layout_width="match_parent"
+	android:layout_height="160dp" />
+
+NetworkImageIndicatorView设置：
+
+	final List<String> urlList= new ArrayList<String>();
+	urlList.add("https://github.com/winfirm/android-image-indicator/blob/master/AndroidImageIndicatorSample/screenshot/guider_00.jpg");
+	urlList.add("https://github.com/winfirm/android-image-indicator/blob/master/AndroidImageIndicatorSample/screenshot/guider_01.jpg");
+	imageIndicatorView = (ImageIndicatorView) findViewById(R.id.network_indicate_view);
+	imageIndicatorView.setupLayoutByImageUrl(urlList);
+	imageIndicatorView.show();
+
+如需要，设置自动播放模式：
+
+	AutoPlayManager autoBrocastManager =  new AutoPlayManager(imageIndicatorView);
+	autoBrocastManager.setBroadcastEnable(true);
+	autoBrocastManager.setBroadCastTimes(5);//循环次数
+	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//首次启动时间及间隔
+	autoBrocastManager.loop();
+
+使用网络图片时，请参照AndroidImageIndicatorSample进行网络访问相关配置。  
+效果与广告模式和用户指引模式相同。
