@@ -1,5 +1,6 @@
 package com.allthelucky.common.view;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -385,8 +386,30 @@ public class ImageIndicatorView extends RelativeLayout {
 			}
 		}
 	}
+	
+	/**
+	 * ScrollIndicateHandler
+	 */
+	private static class ScrollIndicateHandler extends Handler {
+		private final WeakReference<ImageIndicatorView> scrollIndicateViewRef;
 
-	public class MyPagerAdapter extends PagerAdapter {
+		public ScrollIndicateHandler(ImageIndicatorView scrollIndicateView) {
+			this.scrollIndicateViewRef = new WeakReference<ImageIndicatorView>(
+					scrollIndicateView);
+
+		}
+
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			ImageIndicatorView scrollIndicateView = scrollIndicateViewRef.get();
+			if (scrollIndicateView != null) {
+				scrollIndicateView.refreshIndicateView();
+			}
+		}
+	}
+
+	private class MyPagerAdapter extends PagerAdapter {
 		private List<View> pageViews = new ArrayList<View>();
 
 		public MyPagerAdapter(List<View> pageViews) {
@@ -440,21 +463,4 @@ public class ImageIndicatorView extends RelativeLayout {
 		}
 	}
 
-}
-
-class ScrollIndicateHandler extends Handler {
-	private ImageIndicatorView scrollIndicateView;
-
-	public ScrollIndicateHandler(ImageIndicatorView scrollIndicateView) {
-		this.scrollIndicateView = scrollIndicateView;
-
-	}
-
-	@Override
-	public void handleMessage(Message msg) {
-		super.handleMessage(msg);
-		if (this.scrollIndicateView != null) {
-			scrollIndicateView.refreshIndicateView();
-		}
-	}
 }

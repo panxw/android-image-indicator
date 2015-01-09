@@ -1,5 +1,7 @@
 package com.allthelucky.common.view;
 
+import java.lang.ref.WeakReference;
+
 import android.os.Handler;
 import android.os.Message;
 
@@ -163,17 +165,21 @@ public class AutoPlayManager {
 		}
 	}
 
-	static class BroadcastHandler extends Handler {
-		private AutoPlayManager autoBrocastManager;
+	private static class BroadcastHandler extends Handler {
+
+		private final WeakReference<AutoPlayManager> autoBrocastManagerRef;
 
 		public BroadcastHandler(AutoPlayManager autoBrocastManager) {
-			this.autoBrocastManager = autoBrocastManager;
+			this.autoBrocastManagerRef = new WeakReference<AutoPlayManager>(
+					autoBrocastManager);
 		}
 
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			if (this.autoBrocastManager != null) {
+			AutoPlayManager autoBrocastManager = autoBrocastManagerRef.get();
+
+			if (autoBrocastManager != null) {
 				autoBrocastManager.handleMessage(msg);
 			}
 		}
