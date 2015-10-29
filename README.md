@@ -1,8 +1,23 @@
 android-image-indicator
 =======================
 
-Android image indicator for advertise and user guide(network image support).
+Android image indicator for advertise and user guide(network image support).  
+#####[ ![Download](https://api.bintray.com/packages/panxw/maven/android-image-indicator/images/download.svg) ](https://bintray.com/panxw/maven/android-image-indicator/_latestVersion)  
 
+##Usage
+#####for Maven
+	<dependency>
+		<groupId>com.panxw.imageindicator</groupId>
+		<artifactId>library</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+
+#####for Gradle
+	dependencies {
+		compile 'com.panxw.imageindicator:library:1.0.0'
+	}
+
+##Sample
 ####1、Advertise mode(auto play if need)
 in layout file：
 
