@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.panxw.android.imageindicator.sample">
+
+
+    <application android:allowBackup="true"
+        android:name=".SampleApp">
+
+        <activity android:name="com.panxw.android.imageindicator.sample.SampleActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.panxw.android.imageindicator.sample.ImageIndicatorActivity"/>
+        <activity android:name="com.panxw.android.imageindicator.sample.GuideImageIndicatorActivity"/>
+        <activity android:name="com.panxw.android.imageindicator.sample.AutoImageIndicatorActivity"/>
+
+    </application>
+
+</manifest>
