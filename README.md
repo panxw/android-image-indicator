@@ -1,7 +1,8 @@
 android-image-indicator
 =======================
 
-Android image indicator for advertise and user guide(network image support).
+Android image indicator for advertise and user guide(network image support).  
+ [ ![Download](https://api.bintray.com/packages/panxw/maven/android-image-indicator/images/download.svg) ](https://bintray.com/panxw/maven/android-image-indicator/_latestVersion)  
 
 ##Usage
 #####for Maven
