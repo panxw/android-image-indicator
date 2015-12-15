@@ -209,14 +209,19 @@ public class ImageIndicatorView extends RelativeLayout {
 
 	/**
 	 * set Drawable list
-	 * 
+	 * 消除 数据刷新 导致的 图片和 指示器重复的问题
 	 * @param resList
 	 *            Drawable list
 	 */
 	public void setupLayoutByDrawable(final List<Integer> resList) {
 		if (resList == null)
 			throw new NullPointerException();
-
+		if (this.viewList.size()>0){
+			this.viewList.clear();
+		}
+		if (this.indicateLayout.getChildCount() > 0) {
+			this.indicateLayout.removeAllViews();
+		}
 		final int len = resList.size();
 		if (len > 0) {
 			for (int index = 0; index < len; index++) {
@@ -226,6 +231,32 @@ public class ImageIndicatorView extends RelativeLayout {
 			}
 		}
 	}
+	
+	/**
+	 * 设置显示 网络图片，使用ImageLoader 加载网络图片，需要提前配置ImageLoader
+	 * 
+	 */
+	public void setupLayoutByURL(final List<String> urllist) {
+		if (urllist == null)
+			throw new NullPointerException();
+		final int len = urllist.size();
+		if (this.viewList.size()>0){
+			this.viewList.clear();
+		}
+		if (this.indicateLayout.getChildCount() > 0) {
+			this.indicateLayout.removeAllViews();
+		}
+		if (len > 0) {
+			for (int i = 0; i < len; i++) {
+				final ImageView pageItem = new ImageView(getContext());
+				ImageLoader.getInstance().displayImage(
+						Constants.getRequestHost() + urllist.get(i), pageItem,
+						Utils.getOptions());
+				addViewItem(pageItem);
+			}
+		}
+	}
+	
 
 	/**
 	 * set show item current
