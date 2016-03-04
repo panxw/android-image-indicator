@@ -81,10 +81,12 @@ set auto play if need：
 	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//set first play time and interval
 	autoBrocastManager.loop();
 
+####Author
+Blog: http://www.panxw.com  
+Linkedin: http://www.linkedin.com/in/panxw  
+QQ: 85902258  
 
 ## License
-
-    Copyright (C) 2011 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -97,5 +99,3 @@ set auto play if need：
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
