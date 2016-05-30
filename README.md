@@ -21,7 +21,7 @@ Android image indicator for advertise and user guide(network image support).
 ####1、Advertise mode(auto play if need)
 in layout file：
 
-	<com.allthelucky.common.view.ImageIndicatorView
+	<com.panxw.android.imageindicator.ImageIndicatorView
 	android:id="@+id/indicate_view"
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />
@@ -59,7 +59,7 @@ set auto play if need：
 
 layout file：
 
-	<com.allthelucky.common.view.network.NetworkImageIndicatorView
+	<com.panxw.android.imageindicator.NetworkImageIndicatorView
 	android:id="@+id/network_indicate_view"
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />
