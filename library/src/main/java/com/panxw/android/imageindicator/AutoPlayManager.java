@@ -25,6 +25,10 @@ public class AutoPlayManager {
 	 */
 	private static final int DEFAULT_TIMES = -1;
 	/**
+	 * handler ID
+	 */
+	private static final int LOOP_ID = 1;
+	/**
 	 * broadcast flag, play default
 	 */
 	private boolean broadcastEnable = false;
@@ -114,14 +118,23 @@ public class AutoPlayManager {
 		}
 	}
 
+	public void stop() {
+		this.broadcastEnable=false;
+
+		if(this.broadcastHandler.hasMessages(LOOP_ID)) {
+			this.broadcastHandler.removeMessages(LOOP_ID);
+		}
+	}
+
 	protected void handleMessage(Message msg) {
 		if (broadcastEnable) {
 			if (System.currentTimeMillis()
-					- mImageIndicatorView.getRefreshTime() < 2 * 1000) {// ignore time interval less 2s
+					- mImageIndicatorView.getRefreshTime() < 2 * 1000) {// ignore loop less 2s
+				broadcastHandler.sendEmptyMessageDelayed(LOOP_ID, this.intevalMils);
 				return;
 			}
 			if ((broadcastTimes != DEFAULT_TIMES)
-					&& (timesCount > broadcastTimes)) {// loop times used out
+					&& (timesCount >= (broadcastTimes*2))) {// loop times used out
 				return;
 			}
 
@@ -129,7 +142,7 @@ public class AutoPlayManager {
 				if (mImageIndicatorView.getCurrentIndex() < mImageIndicatorView
 						.getTotalCount()) {
 					if (mImageIndicatorView.getCurrentIndex() == mImageIndicatorView
-							.getTotalCount() - 1) {
+							.getTotalCount()-1) {
 						timesCount++;// add loop play times
 						direction = LEFT;
 					} else {
@@ -144,6 +157,7 @@ public class AutoPlayManager {
 				if (mImageIndicatorView.getCurrentIndex() >= 0) {
 					if (mImageIndicatorView.getCurrentIndex() == 0) {
 						direction = RIGHT;
+						timesCount++;
 					} else {
 						mImageIndicatorView
 								.getViewPager()
@@ -154,7 +168,7 @@ public class AutoPlayManager {
 				}
 			}
 
-			broadcastHandler.sendEmptyMessageDelayed(1, this.intevalMils);
+			broadcastHandler.sendEmptyMessageDelayed(LOOP_ID, this.intevalMils);
 		}
 	}
 

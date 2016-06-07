@@ -9,12 +9,12 @@ Android image indicator for advertise and user guide(network image support).
 	<dependency>
 		<groupId>com.panxw.imageindicator</groupId>
 		<artifactId>library</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 	</dependency>
 
 #####for Gradle
 	dependencies {
-		compile 'com.panxw.imageindicator:library:1.0.0'
+		compile 'com.panxw.imageindicator:library:1.0.1'
 	}
 
 ##Sample
@@ -56,10 +56,24 @@ set auto play if need：
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/guider_01.jpg)
 
 ####3、NetworkImageIndicatorView(image from network)
+add new class extends from ImageIndicatorView:
+
+    public class NetworkImageIndicatorView extends ImageIndicatorView {
+        ...
+
+        public void setupLayoutByImageUrl(List<String> urlList) {
+            for(String url: urlList) {
+                ImageView imageView = new ImageView(getContext());
+                //load image from url and set to imageView, you can use UIL or Volley to do this work
+                addViewItem(imageView);
+            }
+        }
+
+    }
 
 layout file：
 
-	<com.panxw.android.imageindicator.NetworkImageIndicatorView
+	<com.yourapp.view.NetworkImageIndicatorView
 	android:id="@+id/network_indicate_view"
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />

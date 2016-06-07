@@ -5,9 +5,15 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\android-studio\gradle\gradle-2.4" />
-        <option name="gradleJvm" value="1.7" />
+        <option name="gradleHome" value="D:/Apache/gradle-2.13" />
         <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/sample" />
+          </set>
+        </option>
+        <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/library" />
