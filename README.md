@@ -9,12 +9,12 @@ Android image indicator for advertise and user guide(network image support).
 	<dependency>
 		<groupId>com.panxw.imageindicator</groupId>
 		<artifactId>library</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2/version>
 	</dependency>
 
 #####for Gradle
 	dependencies {
-		compile 'com.panxw.imageindicator:library:1.0.1'
+		compile 'com.panxw.imageindicator:library:1.0.2'
 	}
 
 ##Sample
