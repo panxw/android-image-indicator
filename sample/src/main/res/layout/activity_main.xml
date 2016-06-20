@@ -25,4 +25,11 @@
         android:layout_marginTop="22dp"
         android:text="USERGUIDE_INDICATOR" />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="NETWORK_IMAGE_INDICATOR" />
+
 </LinearLayout>

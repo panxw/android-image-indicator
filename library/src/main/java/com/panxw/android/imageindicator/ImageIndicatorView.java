@@ -228,6 +228,12 @@ public class ImageIndicatorView extends RelativeLayout {
 	}
 
 	/**
+	 * set image url list
+	 */
+	public void setupLayoutByImageUrl(List<String> urlList) {
+	}
+
+	/**
 	 * set show item current
 	 * 
 	 * @param index
