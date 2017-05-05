@@ -2,22 +2,23 @@ android-image-indicator
 =======================
 
 Android image indicator for advertise and user guide(network image support).  
-#####[ ![Download](https://api.bintray.com/packages/panxw/maven/android-image-indicator/images/download.svg) ](https://bintray.com/panxw/maven/android-image-indicator/_latestVersion)  
 
-##Usage
-#####for Maven
+[ ![Download](https://api.bintray.com/packages/panxw/maven/android-image-indicator/images/download.svg) ](https://bintray.com/panxw/maven/android-image-indicator/_latestVersion)  
+
+## 1.Usage
+##### for Maven
 	<dependency>
 		<groupId>com.panxw.imageindicator</groupId>
 		<artifactId>library</artifactId>
 		<version>1.0.2/version>
 	</dependency>
 
-#####for Gradle
+##### for Gradle
 	dependencies {
 		compile 'com.panxw.imageindicator:library:1.0.2'
 	}
 
-##Sample
+## 2.Sample
 ####1、Advertise mode(auto play if need)
 in layout file：
 
@@ -44,7 +45,7 @@ set auto play if need：
 
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/poster0.jpg)
 
-####2、User guide mode
+#### 2、User guide mode
 
 	this.imageIndicatorView = (ImageIndicatorView) findViewById(R.id.guide_indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
@@ -55,7 +56,7 @@ set auto play if need：
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/guider_00.jpg)  
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/guider_01.jpg)
 
-####3、NetworkImageIndicatorView(image from network)
+#### 3、NetworkImageIndicatorView(image from network)
 add new class extends from ImageIndicatorView:
 
     public class NetworkImageIndicatorView extends ImageIndicatorView {
@@ -95,10 +96,17 @@ set auto play if need：
 	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//set first play time and interval
 	autoBrocastManager.loop();
 
-####Author
-Blog: http://www.panxw.com  
-Linkedin: http://www.linkedin.com/in/panxw  
+## 3.联系作者
+Email: winfirm(#)163.com  
 QQ交流群: 168563980  
+
+## 4.赞助
+想给作者予以鼓励？欢迎打赏吧。  
+支付宝:  
+<img width="200" height="200" src="http://o83o7w0hk.bkt.clouddn.com//donate_qr/donate_alipay.jpg"/>
+
+微信:  
+<img width="200" height="200" src="http://o83o7w0hk.bkt.clouddn.com//donate_qr/donate_weixin.jpg"/>
 
 ## License
 
