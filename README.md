@@ -2,26 +2,27 @@ android-image-indicator
 =======================
 
 Android image indicator for advertise and user guide(network image support).  
-#####[ ![Download](https://api.bintray.com/packages/panxw/maven/android-image-indicator/images/download.svg) ](https://bintray.com/panxw/maven/android-image-indicator/_latestVersion)  
 
-##Usage
-#####for Maven
+[ ![Download](https://api.bintray.com/packages/panxw/maven/android-image-indicator/images/download.svg) ](https://bintray.com/panxw/maven/android-image-indicator/_latestVersion)  
+
+## 1.Usage
+##### for Maven
 	<dependency>
 		<groupId>com.panxw.imageindicator</groupId>
 		<artifactId>library</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.2/version>
 	</dependency>
 
-#####for Gradle
+##### for Gradle
 	dependencies {
-		compile 'com.panxw.imageindicator:library:1.0.0'
+		compile 'com.panxw.imageindicator:library:1.0.2'
 	}
 
-##Sample
+## 2.Sample
 ####1、Advertise mode(auto play if need)
 in layout file：
 
-	<com.allthelucky.common.view.ImageIndicatorView
+	<com.panxw.android.imageindicator.ImageIndicatorView
 	android:id="@+id/indicate_view"
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />
@@ -44,7 +45,7 @@ set auto play if need：
 
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/poster0.jpg)
 
-####2、User guide mode
+#### 2、User guide mode
 
 	this.imageIndicatorView = (ImageIndicatorView) findViewById(R.id.guide_indicate_view);
 	final Integer[] resArray = new Integer[] { R.drawable.ic_launcher, R.drawable.ic_launcher };
@@ -55,11 +56,25 @@ set auto play if need：
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/guider_00.jpg)  
 ![ScreenShot](https://raw.github.com/panxw/android-image-indicator/master/screenshot/guider_01.jpg)
 
-####3、NetworkImageIndicatorView(image from network)
+#### 3、NetworkImageIndicatorView(image from network)
+add new class extends from ImageIndicatorView:
+
+    public class NetworkImageIndicatorView extends ImageIndicatorView {
+        ...
+
+        public void setupLayoutByImageUrl(List<String> urlList) {
+            for(String url: urlList) {
+                ImageView imageView = new ImageView(getContext());
+                //load image from url and set to imageView, you can use UIL or Volley to do this work
+                addViewItem(imageView);
+            }
+        }
+
+    }
 
 layout file：
 
-	<com.allthelucky.common.view.network.NetworkImageIndicatorView
+	<com.yourapp.view.NetworkImageIndicatorView
 	android:id="@+id/network_indicate_view"
 	android:layout_width="match_parent"
 	android:layout_height="160dp" />
@@ -81,10 +96,12 @@ set auto play if need：
 	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//set first play time and interval
 	autoBrocastManager.loop();
 
+## 3.联系作者
+Email: winfirm(#)163.com  
+QQ交流群: 168563980  
+
 
 ## License
-
-    Copyright (C) 2011 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -97,5 +114,3 @@ set auto play if need：
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-

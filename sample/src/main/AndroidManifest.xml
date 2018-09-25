@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.panxw.android.imageindicator.sample">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application android:allowBackup="true"
         android:name=".SampleApp">
@@ -14,6 +17,7 @@
         <activity android:name="com.panxw.android.imageindicator.sample.ImageIndicatorActivity"/>
         <activity android:name="com.panxw.android.imageindicator.sample.GuideImageIndicatorActivity"/>
         <activity android:name="com.panxw.android.imageindicator.sample.AutoImageIndicatorActivity"/>
+        <activity android:name="com.panxw.android.imageindicator.sample.network.NetworkImageIndicatorActivity"/>
 
     </application>
 

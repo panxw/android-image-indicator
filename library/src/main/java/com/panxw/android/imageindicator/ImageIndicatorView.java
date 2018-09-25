@@ -259,6 +259,12 @@ public class ImageIndicatorView extends RelativeLayout {
 	
 
 	/**
+	 * set image url list
+	 */
+	public void setupLayoutByImageUrl(List<String> urlList) {
+	}
+
+	/**
 	 * set show item current
 	 * 
 	 * @param index
@@ -367,7 +373,6 @@ public class ImageIndicatorView extends RelativeLayout {
 	 */
 	protected void refreshIndicateView() {
 		this.refreshTime = System.currentTimeMillis();
-
 		for (int index = 0; index < totelCount; index++) {
 			final ImageView imageView = (ImageView) this.indicateLayout.getChildAt(index);
 			if (this.currentIndex == index) {

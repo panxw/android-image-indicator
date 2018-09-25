@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.panxw.android.imageindicator.sample.network.NetworkImageIndicatorActivity;
+
 public class SampleActivity extends Activity implements OnClickListener {
 
 	@Override
@@ -16,6 +18,7 @@ public class SampleActivity extends Activity implements OnClickListener {
 		findViewById(R.id.button1).setOnClickListener(this);
 		findViewById(R.id.button2).setOnClickListener(this);
 		findViewById(R.id.button3).setOnClickListener(this);
+		findViewById(R.id.button4).setOnClickListener(this);
 	}
 
 	@Override
@@ -27,6 +30,8 @@ public class SampleActivity extends Activity implements OnClickListener {
 			startActivity(new Intent(this, AutoImageIndicatorActivity.class));
 		} else if (resId == R.id.button3) {
 			startActivity(new Intent(this, GuideImageIndicatorActivity.class));
+		}else {
+			startActivity(new Intent(this, NetworkImageIndicatorActivity.class));
 		}
 	}
 }
