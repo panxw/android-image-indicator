@@ -19,7 +19,7 @@ Android image indicator for advertise and user guide(network image support).
 	}
 
 ## 2.Sample
-####1、Advertise mode(auto play if need)
+#### 1、Advertise mode(auto play if need)
 in layout file：
 
 	<com.panxw.android.imageindicator.ImageIndicatorView
@@ -95,11 +95,6 @@ set auto play if need：
 	autoBrocastManager.setBroadCastTimes(5);//loop times
 	autoBrocastManager.setBroadcastTimeIntevel(3 * 1000, 3 * 1000);//set first play time and interval
 	autoBrocastManager.loop();
-
-## 3.联系作者
-Email: winfirm(#)163.com  
-QQ交流群: 168563980  
-
 
 ## License
 
