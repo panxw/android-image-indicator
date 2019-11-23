@@ -1,15 +1,23 @@
-package com.panxw.android.imageindicator;
+package com.lt.hm.wovideo.widget.indicatorView;
+
+/**
+ * @author leonardo
+ * @create_date 16/2/23
+ * @version 1.0
+ */
 
 import android.os.Handler;
 import android.os.Message;
 
+import com.lt.hm.wovideo.utils.StringUtils;
+
 import java.lang.ref.WeakReference;
+
 
 /**
  * Auto BrocastManager for ImageIndicatorView
- * 
+ *
  * @author steven-pan
- * 
  */
 public class AutoPlayManager {
 	/**
@@ -25,9 +33,19 @@ public class AutoPlayManager {
 	 */
 	private static final int DEFAULT_TIMES = -1;
 	/**
+
+	 * turn right
+	 */
+	private final static int RIGHT = 0;
+	/**
+	 * turn left
+	 */
+	private final static int LEFT = 1;
+
 	 * handler ID
 	 */
 	private static final int LOOP_ID = 1;
+
 	/**
 	 * broadcast flag, play default
 	 */
@@ -40,14 +58,6 @@ public class AutoPlayManager {
 	 * play interval ms
 	 */
 	private long intevalMils = DEFAULT_INTEVALMILS;
-	/**
-	 * turn right
-	 */
-	private final static int RIGHT = 0;
-	/**
-	 * turn left
-	 */
-	private final static int LEFT = 1;
 	/**
 	 * current direction
 	 */
@@ -78,11 +88,9 @@ public class AutoPlayManager {
 
 	/**
 	 * set play start time and interval
-	 * 
-	 * @param startMils
-	 *            start time ms(>2, default 8s)
-	 * @param intevelMils
-	 *            time interval ms(default 3s)
+	 *
+	 * @param startMils   start time ms(>2, default 8s)
+	 * @param intevelMils time interval ms(default 3s)
 	 */
 	public void setBroadcastTimeIntevel(long startMils, long intevelMils) {
 		this.startMils = startMils;
@@ -91,9 +99,8 @@ public class AutoPlayManager {
 
 	/**
 	 * set auto play flag
-	 * 
-	 * @param flag
-	 *            on or off
+	 *
+	 * @param flag on or off
 	 */
 	public void setBroadcastEnable(boolean flag) {
 		this.broadcastEnable = flag;
@@ -101,9 +108,8 @@ public class AutoPlayManager {
 
 	/**
 	 * set loop times
-	 * 
-	 * @param times
-	 *            loop times
+	 *
+	 * @param times loop times
 	 */
 	public void setBroadCastTimes(int times) {
 		this.broadcastTimes = times;
@@ -127,7 +133,11 @@ public class AutoPlayManager {
 	}
 
 	protected void handleMessage(Message msg) {
+
+
 		if (broadcastEnable) {
+			if (!StringUtils.isNullOrEmpty(System.currentTimeMillis())&&System.currentTimeMillis()
+					- mImageIndicatorView.getRefreshTime() < 2 * 1000) {// ignore time interval less 2s
 			if (System.currentTimeMillis()
 					- mImageIndicatorView.getRefreshTime() < 2 * 1000) {// ignore loop less 2s
 				broadcastHandler.sendEmptyMessageDelayed(LOOP_ID, this.intevalMils);
@@ -144,7 +154,9 @@ public class AutoPlayManager {
 					if (mImageIndicatorView.getCurrentIndex() == mImageIndicatorView
 							.getTotalCount()-1) {
 						timesCount++;// add loop play times
-						direction = LEFT;
+//						mImageIndicatorView.setCurrentItem(0);
+						mImageIndicatorView.getViewPager().setCurrentItem(0);
+						direction = RIGHT;
 					} else {
 						mImageIndicatorView
 								.getViewPager()
@@ -177,7 +189,7 @@ public class AutoPlayManager {
 		private final WeakReference<AutoPlayManager> autoBrocastManagerRef;
 
 		public BroadcastHandler(AutoPlayManager autoBrocastManager) {
-			this.autoBrocastManagerRef = new WeakReference<AutoPlayManager>(
+			this.autoBrocastManagerRef = new WeakReference<>(
 					autoBrocastManager);
 		}
 
